@@ -27,3 +27,6 @@ class Recipiente:
     
     def __repr__(self) -> str:
         return f'Um recipiente {self.estado()} não especificado'
+    
+    def __str__(self) -> str:
+        return f'Um recipiente {self.estado()} não especificado'
