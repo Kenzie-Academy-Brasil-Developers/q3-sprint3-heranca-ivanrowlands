@@ -8,16 +8,16 @@ class Copo(Recipiente):
     
     def encher(self, bebida: str="água"):
         if not self.limpo:
-            return "não se enche um copo sujo"
+            return "Não se pode encher um copo sujo"
         self.sujar()
         self.conteudo = self.tamanho
         self.bebida = bebida
 
     def beber(self, quantidade: float):
         if quantidade < 0:
-            return "A quantidade não pode ser menor que 0"
+            return "A quantidade deve ser positiva"
         if quantidade > self.conteudo:
-            return "Da para encher mais o copo!"
+            return "Não há bebida suficiente no copo"
         self.conteudo = self.conteudo - quantidade
     
     def lavar(self):
@@ -26,4 +26,4 @@ class Copo(Recipiente):
         self.bebida = None
     
     def __repr__(self):
-        return f"Um copo de {float(self.tamanho)}ml vazio." if self.conteudo <= 0 else f"um copo de {float(self.conteudo)}ml de {self.bebida} no copo de {float(self.tamanho)}ml"
+        return f"Um copo vazio de {float(self.tamanho)}ml" if self.conteudo == 0 else f"Um copo de {float(self.tamanho)}ml contendo {float(self.conteudo)}ml de {self.bebida}"

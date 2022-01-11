@@ -26,4 +26,4 @@ class Recipiente:
         return self.limpo = False
 
     def __repr__(self):
-        return f'não foi especificado o recipiente {self.estado()}'
+        return f'Um recipiente {self.estado()} não especificado'
